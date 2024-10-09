@@ -1,19 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LyneyVoador.MainPage">
+             x:Class="LyneyVoador.MainPage"
+             Shell.NavBarIsVisible="false">
 
     <Grid>
         <Image Source="fundo.png"
-               Opacity="6"
                Aspect="AspectFill"/>
 
-        <Image Source="Lynney.png"/>
+        <Image Source="lyney.png"
+               WidthRequest="50"
+               HeightRequest="50"/>
 
-        <Image Source="cano.png"/>
+        <Image Source="cano.png"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               WidthRequest="100"/>
 
-        <Image Source="canobaixo.png"/>
+        <Image Source="piso.png"
+               VerticalOptions="End"
+               HorizontalOptions="Fill"/>
 
-        <Image Source="piso.png"/>           
+
     </Grid>
 </ContentPage>
