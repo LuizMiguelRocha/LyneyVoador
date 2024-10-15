@@ -9,6 +9,7 @@
                Aspect="AspectFill"/>
 
         <Image Source="lyney.png"
+               x:Name="imglyney"
                WidthRequest="50"
                HeightRequest="50"/>
 
@@ -17,7 +18,13 @@
                VerticalOptions="End"
                WidthRequest="100"/>
 
+        <Image Source="canobaixo.png"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               WidthRequest="100"/>        
+
         <Image Source="piso.png"
+               x:Name="imgChao"
                VerticalOptions="End"
                HorizontalOptions="Fill"/>
 
