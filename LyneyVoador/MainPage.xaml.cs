@@ -94,6 +94,7 @@ public partial class MainPage : ContentPage
 			imgcanobaixo.TranslationY = imgcanocima.HeightRequest + imgcanocima.TranslationY + AberturaMinima;
 			score++;
 			labelScore.Text = "Cano: " + score.ToString("D3");
+			fianlScore.Text = "Total de canos passados  " + score.ToString("");
 		}
 	}
 

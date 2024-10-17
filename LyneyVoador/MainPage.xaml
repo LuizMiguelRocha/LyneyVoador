@@ -12,6 +12,7 @@
 
               <Image Source="lyney.png"
                      x:Name="imglyney"
+                     Aspect="Fill"
                      HeightRequest="110"
                      WidthRequest="80"
                      Margin="30,0,0,0"
@@ -20,7 +21,7 @@
 
               <Image Source="canobaixo.png"
                      x:Name="imgcanobaixo"
-                     HeightRequest="630"
+                     HeightRequest="650"
                      WidthRequest="30"
                      Aspect="AspectFit"
                      HorizontalOptions="End"
@@ -28,7 +29,7 @@
 
               <Image Source="canocima.png"
                      x:Name="imgcanocima"
-                     HeightRequest="630"
+                     HeightRequest="650"
                      WidthRequest="30"
                      Aspect="AspectFit"
                      HorizontalOptions="End"
@@ -55,9 +56,12 @@
                      <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Oi"/>
                      </Frame.GestureRecognizers>
-                     <Image Source="inicio.png"
-                            HeightRequest="220"
-                            WidthRequest="350"/> 
+                     <Label x:Name="fianlScore"
+                            FontSize="50"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            BackgroundColor="#82d2b5"/>
 
               </Frame>
 
