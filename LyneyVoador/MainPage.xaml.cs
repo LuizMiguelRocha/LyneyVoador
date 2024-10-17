@@ -12,7 +12,8 @@ public partial class MainPage : ContentPage
 	const int MaxTempoPulando = 3;
 	bool EstaPulando = false;
 	int TempoPulando = 0;
-	const int AberturaMinima = 200;
+	const int AberturaMinima = 30;
+	int score=0;
 
 	void Inicializar()
 	{
@@ -28,7 +29,7 @@ public partial class MainPage : ContentPage
 	}
 
 	public MainPage()
-	{
+	{ 
 		InitializeComponent();
 	}
 
@@ -83,14 +84,16 @@ public partial class MainPage : ContentPage
 	{
 		imgcanocima.TranslationX -= velocidade;
 		imgcanobaixo.TranslationX -= velocidade;
-		if (imgcanobaixo.TranslationX <= -larguraJanela)
+		if (imgcanobaixo.TranslationX < -larguraJanela)
 		{
 			imgcanobaixo.TranslationX = 0;
 			imgcanocima.TranslationX = 0;
 			var alturaMax = -100;
 			var alturaMin = -imgcanobaixo.HeightRequest;
 			imgcanocima.TranslationY = Random.Shared.Next((int)alturaMin, (int)alturaMax);
-			imgcanobaixo.TranslationY = imgcanocima.TranslationY + alturaMin + imgcanobaixo.HeightRequest;
+			imgcanobaixo.TranslationY = imgcanocima.HeightRequest + imgcanocima.TranslationY + AberturaMinima;
+			score++;
+			labelScore.Text = "Cano: " + score.ToString("D3");
 		}
 	}
 
