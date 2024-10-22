@@ -2,7 +2,7 @@
 
 public partial class MainPage : ContentPage
 {
-	const int gravidade = 1;
+	const int gravidade = 2;
 	const int TempoEntreFrames = 25;
 	bool estaMorto = false;
 	double larguraJanela = 0;
@@ -13,12 +13,19 @@ public partial class MainPage : ContentPage
 	bool EstaPulando = false;
 	int TempoPulando = 0;
 	const int AberturaMinima = 30;
-	int score=0;
+	int score = 0;
 
 	void Inicializar()
 	{
-		imglyney.TranslationY = 0;
+		imglyney.TranslationX = 0;
+		imglyney.TranslationX = 0;
+		imgcanocima.TranslationX = -larguraJanela;
+		imgcanobaixo.TranslationY = -larguraJanela;
+		score = 0;
+		GerenciaCanos();
 	}
+
+
 
 	void Oi(object s, TappedEventArgs e)
 	{
@@ -29,7 +36,7 @@ public partial class MainPage : ContentPage
 	}
 
 	public MainPage()
-	{ 
+	{
 		InitializeComponent();
 	}
 
@@ -44,7 +51,7 @@ public partial class MainPage : ContentPage
 	{
 		imglyney.TranslationY -= ForcaPulo;
 		TempoPulando++;
-		if(TempoPulando >= MaxTempoPulando)
+		if (TempoPulando >= MaxTempoPulando)
 		{
 			EstaPulando = false;
 			TempoPulando = 0;
@@ -101,14 +108,47 @@ public partial class MainPage : ContentPage
 
 	bool VerificaColisao()
 	{
+
 		if (!estaMorto)
 		{
-			if (VerificaColisaoTeto() || VerificaColisaoChao())
+			if (VerificaColisaoTeto() || VerificaColisaoChao() || VerificaColisaoCanoCima() || VerificaColisaoCanoBaixo())
 			{
 				return true;
 			}
 		}
 		return false;
+
+			bool VerificaColisaoCanoCima()
+		{
+			var posHimglyney = (larguraJanela / 2) - (imglyney.WidthRequest / 2);
+			var posVimglyney = (alturaJanela / 2) - (imglyney.HeightRequest / 2) + imglyney.TranslationY;
+			if(posHimglyney >= Math.Abs(imgcanocima.TranslationX) - imgcanocima.WidthRequest&&
+			   posHimglyney <= Math.Abs(imgcanocima.TranslationX) + imgcanocima.WidthRequest&&
+			   posVimglyney <= imgcanocima.HeightRequest + imgcanocima.TranslationY)
+			   {
+				return true;
+			   }
+			   else
+			   {
+				return false;
+			   }
+		}
+
+		bool VerificaColisaoCanoBaixo()
+		{
+			var posHimglyney = (larguraJanela / 2) - (imglyney.WidthRequest / 2);
+			var posVimglyney = (alturaJanela / 2) - (imglyney.HeightRequest / 2) + imglyney.TranslationY;
+			if(posHimglyney >= Math.Abs(imgcanobaixo.TranslationX) - imgcanobaixo.WidthRequest&&
+			   posHimglyney <= Math.Abs(imgcanobaixo.TranslationX) + imgcanobaixo.WidthRequest&&
+			   posVimglyney <= imgcanobaixo.HeightRequest + imgcanobaixo.TranslationY)
+			   {
+				return true;
+			   }
+			   else
+			   {
+				return false;
+			   }
+		}
 	}
 
 	bool VerificaColisaoTeto()

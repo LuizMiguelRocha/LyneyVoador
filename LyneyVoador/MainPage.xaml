@@ -15,8 +15,7 @@
                      Aspect="Fill"
                      HeightRequest="110"
                      WidthRequest="80"
-                     Margin="30,0,0,0"
-                     HorizontalOptions="Start"
+                     HorizontalOptions="Center"
                      VerticalOptions="Center"/>
 
               <Image Source="canobaixo.png"
@@ -57,7 +56,7 @@
                             <TapGestureRecognizer Tapped="Oi"/>
                      </Frame.GestureRecognizers>
                      <Label x:Name="fianlScore"
-                            FontSize="50"
+                            FontSize="35"
                             TextColor="White"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
