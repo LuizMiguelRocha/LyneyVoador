@@ -13,7 +13,7 @@
               <Image Source="lyney.png"
                      x:Name="imglyney"
                      Aspect="Fill"
-                     HeightRequest="110"
+                     HeightRequest="80"
                      WidthRequest="80"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
@@ -22,7 +22,7 @@
                      x:Name="imgcanobaixo"
                      HeightRequest="650"
                      WidthRequest="30"
-                     Aspect="AspectFit"
+                     Aspect="AspectFill"
                      HorizontalOptions="End"
                      VerticalOptions="End"/>
 
@@ -30,7 +30,7 @@
                      x:Name="imgcanocima"
                      HeightRequest="650"
                      WidthRequest="30"
-                     Aspect="AspectFit"
+                     Aspect="AspectFill"
                      HorizontalOptions="End"
                      VerticalOptions="Start"/>
 
