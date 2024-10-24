@@ -44,7 +44,6 @@
                      VerticalOptions="Start"
                      BackgroundColor="#82d2b5"
                      TextColor="White"/>
-
               <Frame
                      IsVisible="true"
                      x:Name="FrameGameOver"
@@ -52,15 +51,23 @@
                      HorizontalOptions="Fill"
                      VerticalOptions="Fill"
                      CornerRadius="0">
+                     
                      <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Oi"/>
                      </Frame.GestureRecognizers>
+                      <VerticalStackLayout>
                      <Label x:Name="fianlScore"
                             FontSize="35"
                             TextColor="White"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            BackgroundColor="#82d2b5"/>
+                            BackgroundColor="#82d2b5"/> 
+                       <Image Source="inicio.png"
+                             Aspect="AspectFit"
+                             Margin="0,200,0,0"
+                             HeightRequest="150"
+                             WidthRequest="300"/>   
+                      </VerticalStackLayout>           
 
               </Frame>
 
