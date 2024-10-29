@@ -81,6 +81,7 @@ public partial class MainPage : ContentPage
 			if (VerificaColisao())
 			{
 				estaMorto = true;
+				 SoundHelper.Play("lynettebaka.wav");
 				FrameGameOver.IsVisible = true;
 				break;
 			}
