@@ -22,6 +22,7 @@ public partial class MainPage : ContentPage
 		imgcanocima.TranslationX = -larguraJanela;
 		imgcanobaixo.TranslationX = -larguraJanela;
 		score = 0;
+		 SoundHelper.Playdois("fundo.wav");
 		GerenciaCanos();
 	}
 
@@ -81,7 +82,7 @@ public partial class MainPage : ContentPage
 			if (VerificaColisao())
 			{
 				estaMorto = true;
-				 SoundHelper.Play("lynettebaka.wav");
+				SoundHelper.Play("lynettebaka.wav");
 				FrameGameOver.IsVisible = true;
 				break;
 			}
